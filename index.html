@@ -1,1 +1,766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>DIVA STORE | Women's Casual Wear</title>
+
+  <meta name="description" content="DIVA STORE - متجر ديفا للملابس النسائية الكاجوال">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #d9b8c4;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-size: 15px;
+    }
+
+    nav a {
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #d9b8c4;
+    }
+
+    .nav-btn {
+      background: white;
+      color: #111;
+      padding: 9px 17px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.5)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero small {
+      font-size: 17px;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 10vw, 95px);
+      letter-spacing: 5px;
+      margin: 10px 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 38px);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 27px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: white;
+    }
+
+    .btn-light {
+      background: white;
+      color: #111;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: #888;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      color: #777;
+      margin-top: 8px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      height: 260px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.75));
+    }
+
+    .category-text {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 25px;
+    }
+
+    .category-text h3 {
+      font-size: 25px;
+    }
+
+    .category:nth-child(1) {
+      background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .category:nth-child(2) {
+      background-image: url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .category:nth-child(3) {
+      background-image: url("https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80");
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      margin-bottom: 7px;
+      font-size: 18px;
+    }
+
+    .product-info p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .product-btn {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #111;
+      color: white;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: #ddd;
+      font-size: 17px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0,0,0,.06);
+    }
+
+    .contact-items {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .contact-item {
+      background: #f5f5f5;
+      padding: 15px 22px;
+      border-radius: 12px;
+      min-width: 230px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: white;
+      font-size: 22px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      z-index: 2000;
+      box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .nav {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      section {
+        padding: 50px 15px;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .product-img {
+        height: 220px;
+      }
+
+      .product-info {
+        padding: 12px 7px;
+      }
+
+      .product-info h3 {
+        font-size: 15px;
+      }
+
+      .contact-box {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+
+      <a href="#" class="logo">
+        DIVA<span>.</span>
+      </a>
+
+      <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#products">أحدث المنتجات</a>
+        <a href="#about">عن DIVA</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <a href="#products" class="nav-btn">
+        تسوقي الآن
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <small>WELCOME TO</small>
+
+        <h1>DIVA</h1>
+
+        <h2>Women's Casual Wear</h2>
+
+        <p>
+          إطلالتك اليومية تبدأ من هنا ✨
+          <br>
+          اختاري ستايلك مع DIVA
+        </p>
+
+        <div class="buttons">
+
+          <a href="#products" class="btn btn-light">
+            اكتشفي المجموعة
+          </a>
+
+          <a
+            href="https://wa.me/201055150802?text=مرحباً%20DIVA%20STORE%20أريد%20معرفة%20المنتجات%20المتاحة"
+            class="btn btn-dark"
+            target="_blank">
+            تواصلي معنا
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+
+      <div class="container">
+
+        <div class="section-title">
+          <small>DIVA COLLECTION</small>
+          <h2>اختاري ستايلك</h2>
+          <p>أزياء نسائية كاجوال تناسب كل يوم وكل مناسبة</p>
+        </div>
+
+        <div class="categories">
+
+          <a href="#products" class="category">
+            <div class="category-text">
+              <h3>كاجوال</h3>
+              <p>إطلالات يومية مميزة</p>
+            </div>
+          </a>
+
+          <a href="#products" class="category">
+            <div class="category-text">
+              <h3>ترند</h3>
+              <p>أحدث صيحات الموضة</p>
+            </div>
+          </a>
+
+          <a href="#products" class="category">
+            <div class="category-text">
+              <h3>إطلالاتك</h3>
+              <p>ستايل يليق بكِ</p>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="products" style="background:#f0f0f0;">
+
+      <div class="container">
+
+        <div class="section-title">
+          <small>NEW ARRIVALS</small>
+          <h2>أحدث المنتجات</h2>
+          <p>اكتشفي الجديد من DIVA STORE</p>
+        </div>
+
+        <div class="products">
+
+          <article class="product">
+
+            <img
+              class="product-img"
+              src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"
+              alt="ملابس نسائية">
+
+            <div class="product-info">
+              <h3>إطلالة كاجوال</h3>
+              <p>ستايل عصري ومريح</p>
+
+              <a
+                class="product-btn"
+                href="https://wa.me/201055150802?text=مرحباً%20DIVA%20STORE%20أريد%20الاستفسار%20عن%20إطلالة%20كاجوال"
+                target="_blank">
+                اسألي عن المنتج
+              </a>
+            </div>
+
+          </article>
+
+
+          <article class="product">
+
+            <img
+              class="product-img"
+              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
+              alt="ملابس نسائية">
+
+            <div class="product-info">
+              <h3>لوك عصري</h3>
+              <p>اختاري إطلالتك الجديدة</p>
+
+              <a
+                class="product-btn"
+                href="https://wa.me/201055150802?text=مرحباً%20DIVA%20STORE%20أريد%20الاستفسار%20عن%20اللوك%20العصري"
+                target="_blank">
+                اسألي عن المنتج
+              </a>
+            </div>
+
+          </article>
+
+
+          <article class="product">
+
+            <img
+              class="product-img"
+              src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80"
+              alt="ملابس نسائية">
+
+            <div class="product-info">
+              <h3>ستايل DIVA</h3>
+              <p>أناقة بسيطة ومميزة</p>
+
+              <a
+                class="product-btn"
+                href="https://wa.me/201055150802?text=مرحباً%20DIVA%20STORE%20أريد%20الاستفسار%20عن%20ستايل%20DIVA"
+                target="_blank">
+                اسألي عن المنتج
+              </a>
+            </div>
+
+          </article>
+
+
+          <article class="product">
+
+            <img
+              class="product-img"
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80"
+              alt="أزياء نسائية">
+
+            <div class="product-info">
+              <h3>إطلالة مميزة</h3>
+              <p>كوني مختلفة مع DIVA</p>
+
+              <a
+                class="product-btn"
+                href="https://wa.me/201055150802?text=مرحباً%20DIVA%20STORE%20أريد%20الاستفسار%20عن%20الإطلالة"
+                target="_blank">
+                اسألي عن المنتج
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+      <div class="about-content">
+
+        <h2>DIVA STORE</h2>
+
+        <p>
+          متجر متخصص في الملابس النسائية الكاجوال.
+          <br><br>
+          بنختار لكِ موديلات عصرية ومريحة تساعدك
+          تعملي إطلالتك الخاصة كل يوم.
+          <br><br>
+          لأن الأناقة مش بس لبس...
+          <strong>الأناقة هي DIVA.</strong>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="section-title" style="margin-bottom:10px;">
+
+            <small>CONTACT DIVA</small>
+
+            <h2>زورينا أو تواصلي معنا</h2>
+
+          </div>
+
+          <p>
+            يسعدنا زيارتك في فرع DIVA STORE
+          </p>
+
+          <div class="contact-items">
+
+            <div class="contact-item">
+              <strong>📍 العنوان</strong>
+              العاشر من رمضان<br>
+              المجاورة الخامسة<br>
+              مول أبو الوفا - الدور الأول علوي
+            </div>
+
+            <div class="contact-item">
+              <strong>📞 الهاتف</strong>
+              <a href="tel:01055150802">
+                01055150802
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>📸 Instagram</strong>
+              <a
+                href="https://www.instagram.com/diva.store103/"
+                target="_blank">
+                @diva.store103
+              </a>
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="buttons">
+
+            <a
+              href="https://wa.me/201055150802"
+              class="btn btn-dark"
+              target="_blank">
+              💬 واتساب
+            </a>
+
+            <a
+              href="https://www.instagram.com/diva.store103/"
+              class="btn btn-light"
+              target="_blank">
+              📸 Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>DIVA STORE</strong>
+
+    <p>
+      Women's Casual Wear
+    </p>
+
+    <p>
+      © 2026 DIVA STORE - جميع الحقوق محفوظة
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/201055150802"
+    target="_blank"
+    aria-label="WhatsApp">
+    ☎
+  </a>
+
+</body>
+</html>
